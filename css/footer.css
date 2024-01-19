@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+footer{
+    background-color: #e6e6e6;
+}
+.margin-top{
+    margin-top: 10px;
+}
+.footer {
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.footer-section {
+    margin-top: 50px;
+    width: 80%;
+    /* border: 2px solid blue; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+.footer-img {
+    display: block;
+    margin: auto;
+    /* border: 2px solid black; */
+    width: 13%;
+    margin: 0 auto;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 2px;
+    word-spacing: 3px;
+    margin-bottom: 0; 
+    margin-top: 10px;  
+}
+
+.list-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%; 
+    margin: 0 auto; 
+}
+
+.list-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px;
+    list-style: none;
+}
+.list-container ul a{
+    text-decoration: none;
+    color: #000000c8;
+}
+
+.signup-container {
+    width: 80%;
+    margin-top: 50px;
+}
+
+.signup-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 90%;
+}
+
+.subscribe-form input {
+    width: 60%;
+    padding: 6px 15px;
+    border: 1px solid rgb(218, 212, 212);
+    margin: 0;
+    border-radius: 3px;
+}
+
+.subscribe-form button {
+    background-color: black;
+    color: white;
+    width: 60%;
+    padding: 6px 15px;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+.social-icons i{
+    font-size: 25px;
+    cursor: pointer;
+}
+.social-icons i:nth-child(2){
+    font-size: 21px;
+}
+
