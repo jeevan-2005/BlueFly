@@ -11,16 +11,10 @@ fetch("./json_data/container.json")
 
     function handleAppend(data){
 
-        data.forEach(function(ele){
-            let div = document.createElement("div");
-            div.setAttribute("class","items_ty");
-    
-            let p = document.createElement("p");
+        data.forEach(function(ele,i){
+            let p = document.querySelector(`#p${i}`);
             p.innerHTML = ele.title;
-            let img = document.createElement("img")
+            let img = document.querySelector(`#img${i}`)
             img.src = ele.link;
-    
-            div.append(img,p);
-            con.append(div);
         });
     }

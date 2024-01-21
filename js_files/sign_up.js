@@ -1,7 +1,11 @@
 let signupArr = []
 
-document.querySelector("form").addEventListener('submit',function(){
+document.querySelector("#sign-up-form").addEventListener('submit',function(){
     handleData(event);
+})
+
+document.querySelector(".user").addEventListener("click",function(){
+    window.location.href = "login.html"
 })
 
 function loadData(){
@@ -12,10 +16,9 @@ function loadData(){
     }
 }
 
-document.querySelector(".user").addEventListener("click",function(){
-    window.location.href = "login.html"
-})
-
+function goToHome(){
+    window.location.href = "index.html"
+}
 
 function saveData(){
     localStorage.setItem("signupArr",JSON.stringify(signupArr));
@@ -35,7 +38,15 @@ function handleData(e){
         email,
         password
     }
-    checkCredentials(obj)
+    if(signupArr.length == 0)
+    {
+        signupArr.push(obj);
+        alert("Account Created")
+        goToHome()
+    }
+    else
+        checkCredentials(obj);
+
     saveData();
 
 }
@@ -51,10 +62,12 @@ function checkCredentials(obj){
     })
     if(flag)
     {
+        console.log(obj.f_name);
         signupArr.push(obj);
-        alert("account created");
+        alert("Account Created")
+        goToHome()
     }
         
 }
-
+// localStorage.clear()
 loadData()
