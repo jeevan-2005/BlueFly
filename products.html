@@ -32,7 +32,7 @@
             </form>
             <a href="login.html"><i class="fa-solid fa-user user" style="color: #fffdfd;cursor: pointer;"></i></a>
             <a ><i class="fa-solid fa-cart-arrow-down cart" style="color: #ffffff;cursor: pointer;"><span
-                        style="font-size: 8px;   padding-left: 7px;">Cart</span></i>
+                        style="font-size: 8px;   padding-left: 7px;">Cart<span id="num">0</span></span></i>
             </a>
         </div>
 
@@ -242,6 +242,19 @@
         <span style="letter-spacing: 0;font-size: 14px;">Luxury brands at discounted prices</span>
     </div>
 
+    <div class="cartTab">
+        <h1 style="text-align: center;padding: 10px;">Shopping Cart</h1>
+        <div class="listCart">
+        </div>
+        <div class="total_div">
+            <p>Total Cost : <span class="total"></span></p>
+        </div>
+        <div class="Cbtn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">CHECK OUT</button>
+        </div>
+    </div>
+
     <div class="pdtsCon">
 
     </div>
@@ -293,7 +306,10 @@
 </html>
 
 <script>
-    
+
+
+
+
 function loadData()
 {
     let b = JSON.parse(localStorage.getItem("filterArray"))
@@ -302,9 +318,24 @@ function loadData()
     handleProductsDisplay(b)
 }    
 
+var ct = []
+function loadCart(){
+    ct = JSON.parse(localStorage.getItem("crtArr")) || [];
+    num.innerHTML = ct.length;
+    if(ct.length != 0)
+        displayCart(ct);
+    else
+        listCart.innerHTML = `No products added to the cart`
+}
+function saveCart(){
+    localStorage.setItem("crtArr",JSON.stringify(ct));
+}
+
+
 var pdtsCon = document.querySelector(".pdtsCon")
 
 function handleProductsDisplay(b){
+    
     let mainDiv = document.createElement("div")
     mainDiv.setAttribute("id","productContainer")
     
@@ -327,15 +358,66 @@ function handleProductsDisplay(b){
         let cartBtn = document.createElement("button")
         cartBtn.setAttribute("class","cartBtn")
         cartBtn.innerHTML = "Add to Cart"
-
+        cartBtn.addEventListener("click", function(){
+            ct.push(ele);
+            displayCart(ct)
+            saveCart();
+        })
+        
         div.append(img,p1,p2,cartBtn)
         mainDiv.append(div);
         pdtsCon.append(mainDiv);
-
     });
+
+}
+
+let total = document.querySelector(".total");
+let num = document.querySelector("#num");
+let listCart = document.querySelector(".listCart")
+function displayCart(arr){
+    listCart.innerHTML = ""
+    for(let i = 0;i<arr.length; i++){
+        let div = document.createElement("div")
+        div.setAttribute("class","listItem");
+
+        let img = document.createElement("img")
+        img.setAttribute("class","list_img");
+        img.src  = arr[i].link;
+
+        let title = document.createElement("p")
+        title.setAttribute("class","list_title");
+        title.innerHTML = arr[i].title;
+
+        let price = document.createElement("p")
+        price.setAttribute("class","list_price");
+        price.innerHTML = arr[i].price;
+
+        div.append(img,title,price);
+        listCart.append(div);
+
+        num.innerHTML = ct.length;
+    }
+    let sum = 0;
+    for(let i =0 ; i<arr.length; i++)
+    {
+        let str = arr[i].price;
+        let nstr = ""
+        for(let i = 0; i<str.length; i++){
+            if(str[i] == '$' || str[i] == ',')
+                continue;
+            else    
+                nstr+= str[i];
+        }
+        sum += +nstr;
+    }
+    total.innerHTML = `$ ${sum}`;
 }
 loadData()
+loadCart()
+
+
+
+// localStorage.clear() 
 </script>
 
-
-
+<script src="./js_files/product_cart.js"></script>

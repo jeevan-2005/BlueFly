@@ -75,7 +75,7 @@
     z-index: 99;
     top: -50%;
     text-align: center;
-    color: #ede7e7;
+    color: rgb(237, 231, 231);
     padding: 0px 40px;
     text-shadow: 0 0 2px rgb(255, 215, 0);
 }

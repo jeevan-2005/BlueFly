@@ -5,7 +5,7 @@
     /* border: 1px solid red; */
 }
 footer{
-    background-color: #e6e6e6;
+    background-color: rgb(230, 230, 230);
 }
 .margin-top{
     margin-top: 10px;
@@ -89,8 +89,8 @@ footer{
 }
 
 .subscribe-form button {
-    background-color: black;
-    color: white;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     width: 60%;
     padding: 6px 15px;
     cursor: pointer;

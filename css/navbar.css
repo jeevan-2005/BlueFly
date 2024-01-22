@@ -33,7 +33,7 @@ body{
 .icons>a i{
     font-size: 16px;
     padding: 8px 10px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     border-radius: 4px;
     box-shadow: 0px 0px 10px 2px rgb(237, 232, 232);
     /* border: 2px solid red; */
@@ -56,11 +56,11 @@ body{
     font-size: 14px;
 }
 .links>ul>li>a:hover{
-    color: #ff8a00;
+    color: rgb(255, 138, 0);
 }
 .links>ul>li>a{
     text-decoration: none;
-    color: #333333;
+    color: rgb(51, 51, 51);
     transition: all ease-in-out 0.1s;
 }
 .srch{
@@ -70,13 +70,13 @@ body{
     align-items: center;
     padding: 14px;
     border-radius: 28px;
-    background: #000000;
+    background: rgb(0, 0, 0);
     transition: box-shadow 0.5s;
 }
 #srch-ip{
     font-size: 14px;
     font-family: 'Lexend', sans-serif;
-    color: #fefefe;
+    color: rgb(254, 254, 254);
     margin-left: 14px;
     outline: none;
     border: none;
@@ -90,6 +90,20 @@ body{
     color: rgba(253, 253, 253, 0.536);
 }
 
+.nvbr .icons a span #num{
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    right: 35px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: 9px;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -99,8 +113,8 @@ body{
     align-items: flex-start;
     justify-content: space-around;
     position: absolute;
-    background-color: #ffffff;
-    box-shadow: 0px 5px 10px #00000020;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.125);
     margin-top: 0px;
     display: none;
     border-radius: 7px;
@@ -128,7 +142,7 @@ body{
 .links>ul .submenu li a{
     padding: 10px 10px;
     text-decoration: none;
-    color: #615f5f;
+    color: rgb(97, 95, 95);
     display: inline-block;
     width: 100%;
     font-size: 13px;
@@ -136,8 +150,8 @@ body{
 
 .highlight{
     text-align: center;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 9px;
     margin: 5px 0px ;
     font-family: 'Josefin Sans', sans-serif;

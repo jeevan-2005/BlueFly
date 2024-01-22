@@ -52,3 +52,116 @@
     background-color: rgb(0, 0, 0);
     font-size: 15px;
 }
+
+
+.nvbr .icons a span #num{
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    right: 35px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: 9px;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.cartTab{
+    background-color: rgb(232, 228, 224);
+    color: black;
+    width: 400px;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 550px 40px 70px;  
+    font-family: 'Josefin Sans', sans-serif;
+    gap: 0px;
+}
+.cartTab .total_div{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-weight: bold;   
+}
+.total_div p{
+    margin: 0;
+    padding: 0;
+}
+
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.cartTab .Cbtn{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.cartTab .Cbtn button{
+    background-color: rgb(232, 188, 14);
+    border: none;
+    font-weight: bold;
+}
+
+.cartTab .Cbtn .close{
+    background-color: rgb(238, 238, 238);
+}
+
+.cartTab .listCart{
+    overflow: auto;
+}
+.cartTab .listCart::-webkit-scrollbar{
+    width: 0;
+}
+
+.cartTab{
+    right: -400px;
+    transition: all ease 0.5s;
+}
+
+body.activeCartTab .cartTab{
+    right: 0;
+}
+
+.listCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 20px 10px;
+}
+.listItem{
+    height: 130px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 0px;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.listItem .list_img{
+    width: 80px;
+    height: 120px;
+    border-radius: 10px;
+}
+.listItem .list_title{
+    font-size: 12px;
+}
+
+.listItem .list_price{
+    font-weight: bold;
+}

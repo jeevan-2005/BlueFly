@@ -1,4 +1,3 @@
-console.log(document.querySelectorAll(".items_ty"));
 
 let productsArr = []
 
@@ -37,3 +36,4 @@ function handleFilter(a,tle){
     console.log(productsArr)
     saveData();
 }
+
